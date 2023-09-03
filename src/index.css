@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root {
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+    --Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    overflow-x: hidden; 
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--Very-light-gray);
+    padding: 4rem 2rem;
+    text-align: left;
+}
+
+img {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: "Big Shoulders Display", cursive;
+    font-size: 2.5rem;
+    color: var(--Very-light-gray);
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1rem;
+    color: var(--Transparent-white);
+    margin-bottom: 5rem;
+    line-height: 1.5rem;
+}
+
+.sedans {
+    background-color: var(--Bright-orange);
+    padding: 2.5rem;  
+    border-radius: 8px 8px 0px 0px;
+}
+
+.sedan-button {
+    background-color: var(--Very-light-gray);
+    color: var(--Bright-orange);
+    padding: 1rem 2rem;
+    border-radius: 8rem;
+    border: 1px solid var(--Very-light-gray);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sedan-button:hover, .sedan-button:focus {
+     background-color: var(--Bright-orange);
+     color: white;
+     border: 2px solid var(--Very-light-gray);
+}
+
+.suvs {
+    background-color: var(--Dark-cyan);
+    padding: 2.5rem;
+}
+
+.suvs-button {
+    background-color: var(--Very-light-gray);
+    color: var(--Dark-cyan);
+    padding: 1rem 2rem;
+    border-radius: 8rem;
+    border: 1px solid var(--Very-light-gray);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.suvs-button:hover, .suvs-button:focus {
+     background-color: var(--Dark-cyan);
+     color: white;
+     border: 2px solid var(--Very-light-gray);
+}
+
+.luxury {
+    background-color: var(--Very-dark-cyan);
+    padding: 2.5rem;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.luxury-button {
+    background-color: var(--Very-light-gray);
+    color: var(--Very-dark-cyan);
+    padding: 1rem 2rem;
+    border-radius: 8rem;
+    border: 1px solid var(--Very-light-gray);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.luxury-button:hover, .luxury-button:focus {
+     background-color: var(--Very-dark-cyan);
+     color: white;
+     border: 2px solid var(--Very-light-gray);
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        /* text-align: center; */
+    }
+
+    .sedans {
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    .luxury {
+        border-radius: 0px 8px 8px 0px;
+    }
 }
